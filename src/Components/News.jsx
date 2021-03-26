@@ -7,6 +7,9 @@ export default function News() {
   const { news, loading } = useGlobalContext();
 
   useFetch();
+  const handleDelete = (e) => {
+    e.preventDefault();
+  };
 
   let toShow =
     !loading && news.length !== 0
@@ -41,6 +44,9 @@ export default function News() {
                 <span>Relevent:</span>
                 <p>{Math.floor(relevancy_score / 1000)}%</p>
               </div>
+              <button className="del" onClick={handleDelete}>
+                Delete
+              </button>
             </a>
           );
         })
