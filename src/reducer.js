@@ -4,6 +4,8 @@ import {
   SET_TERM,
   REMOVE_NEWS,
   SET_NO_OF_PAGES,
+  NEXT_PAGE,
+  PREV_PAGE,
 } from "./actions";
 
 const reducer = (state, action) => {
@@ -36,6 +38,17 @@ const reducer = (state, action) => {
       return {
         ...state,
         noOfPages: +payload,
+      };
+
+    case NEXT_PAGE:
+      return {
+        ...state,
+        currentPage: state.currentPage === 50 ? 0 : state.currentPage + 1,
+      };
+    case PREV_PAGE:
+      return {
+        ...state,
+        currentPage: state.currentPage === 0 ? 0 : state.currentPage - 1,
       };
     default:
       return {

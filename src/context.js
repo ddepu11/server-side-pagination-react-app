@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { reducer } from "./reducer";
-import { REMOVE_NEWS, SET_TERM, SET_CURRENT_PAGE } from "./actions";
+import { REMOVE_NEWS, SET_TERM, PREV_PAGE, NEXT_PAGE } from "./actions";
 
 const AppContext = createContext();
 
@@ -26,9 +26,23 @@ const AppProvider = ({ children }) => {
     dispatch({ type: SET_TERM, payload: e.target.value });
   };
 
+  const handleNextPage = () => {
+    dispatch({ type: NEXT_PAGE });
+  };
+  const handlePrevPage = () => {
+    dispatch({ type: PREV_PAGE });
+  };
+
   return (
     <AppContext.Provider
-      value={{ ...state, handleDelete, dispatch, handleChange }}
+      value={{
+        ...state,
+        handleDelete,
+        dispatch,
+        handleChange,
+        handleNextPage,
+        handlePrevPage,
+      }}
     >
       {children}
     </AppContext.Provider>

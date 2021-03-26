@@ -10,6 +10,8 @@ export default function News() {
     handleDelete,
     currentPage,
     noOfPages,
+    handlePrevPage,
+    handleNextPage,
   } = useGlobalContext();
   console.log(noOfPages);
 
@@ -58,9 +60,13 @@ export default function News() {
       : "";
   let pagination = (
     <div className="pagination">
-      <button>Prev</button>
+      <button className="prev" onClick={handlePrevPage}>
+        Prev
+      </button>
       <span>{`${currentPage} of ${noOfPages}`}</span>
-      <button>Next</button>
+      <button onClick={handleNextPage} className="next">
+        Next
+      </button>
     </div>
   );
 
