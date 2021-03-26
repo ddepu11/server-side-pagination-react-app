@@ -13,7 +13,6 @@ export default function News() {
     handlePrevPage,
     handleNextPage,
   } = useGlobalContext();
-  console.log(noOfPages);
 
   useFetch();
 

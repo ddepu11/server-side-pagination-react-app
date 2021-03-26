@@ -3,9 +3,9 @@ import { useGlobalContext } from "./context";
 import { SET_LOADING, SET_NEWS, SET_NO_OF_PAGES } from "./actions";
 
 const useFetch = () => {
-  const { term, dispatch } = useGlobalContext();
+  const { term, dispatch, currentPage } = useGlobalContext();
 
-  const url = `https://hn.algolia.com/api/v1/search?query=${term}&tags=story`;
+  const url = `https://hn.algolia.com/api/v1/search?query=${term}&tags=story&page=${currentPage}`;
 
   const getNews = async () => {
     dispatch({ type: SET_LOADING });
@@ -22,7 +22,7 @@ const useFetch = () => {
   useEffect(
     () => getNews(),
     // eslint-disable-next-line
-    [term]
+    [term, currentPage]
   );
 };
 
