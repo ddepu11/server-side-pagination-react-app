@@ -139,3 +139,50 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+@media (max-width: 600px) {
+  .form {
+    padding: 10px 10px;
+  }
+  .form input {
+    font-size: 0.9em;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .title p {
+    font-size: 0.9em;
+  }
+  .c span {
+    font-size: 0.9em;
+  }
+  .c p {
+    font-size: 0.9em;
+  }
+  .del {
+    background: #ff5c21;
+    width: 100%;
+    color: black;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    padding: 4px 0px;
+  }
+  .prev,
+  .next {
+    font-size: 0.9em;
+    background: #ff5c21;
+    color: black;
+    padding: 4px 10px;
+    border-radius: 0px;
+  }
+  .pagination span {
+    padding: 10px 15px;
+    font-size: 1em;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+  }
+  .loading {
+    padding: 150px 10px;
+    font-size: 1em;
+    letter-spacing: 3px;
+  }
+}
