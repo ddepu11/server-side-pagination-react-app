@@ -7,20 +7,6 @@
   align-items: center;
 }
 
-.card {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-image: linear-gradient(
-    to right top,
-    #8492ed,
-    #c176d8,
-    #ed52a8,
-    #fd3a65,
-    #eb4b12
-  );
-  padding: 10px 25px;
-  border-radius: 20px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -29,21 +15,6 @@
 }
 body {
   min-height: 100vh;
-  /* background-image: linear-gradient(
-    to right top,
-    #000000,
-    #030303,
-    #070707,
-    #0a0a0a,
-    #0d0d0d,
-    #0d0d0d,
-    #0d0d0d,
-    #0d0d0d,
-    #0a0a0a,
-    #070707,
-    #030303,
-    #000000
-  ); */
   color: white;
   background: url("./images/bg.png");
   background-position: center center;
@@ -78,15 +49,65 @@ input:focus {
   outline: 0;
 }
 .form {
-  padding: 20px 20px;
+  padding: 30px 20px 20px;
 }
 .form input,
 button {
   font-size: 1em;
   padding: 5px 10px;
-  color: #333;
+  color: #122ab4;
+  letter-spacing: 1px;
 }
 .form button {
   background-color: #ff5c21;
   color: white;
+}
+.loading {
+  text-align: center;
+  padding: 150px 20px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 0.3s ease-in;
+}
+.card:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+.hero {
+  padding: 20px 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-template-rows: minmax(150px, 320px);
+  row-gap: 30px;
+  column-gap: 20px;
+}
+.news {
+  overflow: hidden;
+  padding: 5px;
+  background: #222;
+}
+.c {
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 5px;
+}
+.c span {
+  font-size: 1em;
+  color: #afafaf;
+}
+
+.c p {
+  display: inline;
+  font-size: 1em;
+  color: #96a5fd;
+}
+.title p {
+  font-size: 1em;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-transform: capitalize;
+  color: #ff5c21;
 }

@@ -2,9 +2,8 @@ import React from "react";
 import { useGlobalContext } from "../context";
 
 export default function SearchFrom() {
+  
   const { term, setTerm } = useGlobalContext();
-
-  console.log(term);
 
   const handleSubmit = (e) => {
     e.preventDefault();

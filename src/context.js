@@ -4,9 +4,13 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [term, setTerm] = useState("js");
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   return (
-    <AppContext.Provider value={{ term, setTerm }}>
+    <AppContext.Provider
+      value={{ term, setTerm, news, setNews, loading, setLoading }}
+    >
       {children}
     </AppContext.Provider>
   );
