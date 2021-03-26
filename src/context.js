@@ -1,6 +1,6 @@
-import { createContext, useContext, useState, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { reducer } from "./reducer";
-import { SET_LOADING, SET_NEWS, SET_TERM, REMOVE_NEWS } from "./actions";
+import { REMOVE_NEWS, SET_TERM } from "./actions";
 
 const AppContext = createContext();
 
@@ -15,6 +15,9 @@ const AppProvider = ({ children }) => {
 
   const handleDelete = (e) => {
     e.preventDefault();
+    const id = e.target.dataset.id;
+
+    dispatch({ type: REMOVE_NEWS, payload: id });
   };
 
   const handleSubmit = (e) => {

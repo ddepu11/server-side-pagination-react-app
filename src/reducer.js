@@ -16,6 +16,20 @@ const reducer = (state, action) => {
         ...state,
         term: payload,
       };
+      break;
+    case SET_NEWS:
+      return {
+        ...state,
+        news: payload,
+        loading: false,
+      };
+      break;
+    case REMOVE_NEWS:
+      return {
+        ...state,
+        news: state.news.filter((item) => item.objectID !== payload),
+      };
+      break;
   }
 };
 

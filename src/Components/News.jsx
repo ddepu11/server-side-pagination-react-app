@@ -9,8 +9,6 @@ export default function News() {
 
   useFetch();
 
-  
-
   let toShow =
     !loading && news.length !== 0
       ? news.map((item, index) => {
@@ -21,6 +19,7 @@ export default function News() {
             points,
             relevancy_score,
             url,
+            objectID,
           } = item;
 
           return (
@@ -44,7 +43,7 @@ export default function News() {
                 <span>Relevent:</span>
                 <p>{Math.floor(relevancy_score / 1000)}%</p>
               </div>
-              <button className="del" onClick={handleDelete}>
+              <button className="del" data-id={objectID} onClick={handleDelete}>
                 Delete
               </button>
             </a>
