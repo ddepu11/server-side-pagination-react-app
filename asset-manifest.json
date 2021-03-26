@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/server-side-pagination-react-app/static/css/main.617959ae.chunk.css",
+    "main.js": "/server-side-pagination-react-app/static/js/main.dec732a7.chunk.js",
+    "main.js.map": "/server-side-pagination-react-app/static/js/main.dec732a7.chunk.js.map",
+    "runtime-main.js": "/server-side-pagination-react-app/static/js/runtime-main.83680eb3.js",
+    "runtime-main.js.map": "/server-side-pagination-react-app/static/js/runtime-main.83680eb3.js.map",
+    "static/js/2.6c28620b.chunk.js": "/server-side-pagination-react-app/static/js/2.6c28620b.chunk.js",
+    "static/js/2.6c28620b.chunk.js.map": "/server-side-pagination-react-app/static/js/2.6c28620b.chunk.js.map",
+    "index.html": "/server-side-pagination-react-app/index.html",
+    "static/css/main.617959ae.chunk.css.map": "/server-side-pagination-react-app/static/css/main.617959ae.chunk.css.map",
+    "static/js/2.6c28620b.chunk.js.LICENSE.txt": "/server-side-pagination-react-app/static/js/2.6c28620b.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/server-side-pagination-react-app/static/media/bg.da3d825c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83680eb3.js",
+    "static/js/2.6c28620b.chunk.js",
+    "static/css/main.617959ae.chunk.css",
+    "static/js/main.dec732a7.chunk.js"
+  ]
+}
