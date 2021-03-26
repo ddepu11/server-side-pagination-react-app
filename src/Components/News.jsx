@@ -11,7 +11,7 @@ export default function News() {
     currentPage,
     noOfPages,
   } = useGlobalContext();
-  // console.log(news, loading);
+  console.log(noOfPages);
 
   useFetch();
 
@@ -56,6 +56,18 @@ export default function News() {
           );
         })
       : "";
+  let pagination = (
+    <div className="pagination">
+      <button>Prev</button>
+      <span>{`${currentPage} of ${noOfPages}`}</span>
+      <button>Next</button>
+    </div>
+  );
 
-  return <main className="hero">{loading ? <Loading /> : toShow}</main>;
+  return (
+    <>
+      <main className="hero">{loading ? <Loading /> : toShow}</main>
+      {noOfPages !== 0 ? pagination : ""}
+    </>
+  );
 }
