@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { reducer } from "./reducer";
-import { REMOVE_NEWS, SET_TERM } from "./actions";
+import { REMOVE_NEWS, SET_TERM, SET_CURRENT_PAGE } from "./actions";
 
 const AppContext = createContext();
 
@@ -8,6 +8,8 @@ const initialState = {
   loading: false,
   news: [],
   term: "js",
+  noOfPages: 0,
+  currentPage: 0,
 };
 
 const AppProvider = ({ children }) => {
@@ -20,17 +22,13 @@ const AppProvider = ({ children }) => {
     dispatch({ type: REMOVE_NEWS, payload: id });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   const handleChange = (e) => {
     dispatch({ type: SET_TERM, payload: e.target.value });
   };
 
   return (
     <AppContext.Provider
-      value={{ ...state, handleDelete, dispatch, handleChange, handleSubmit }}
+      value={{ ...state, handleDelete, dispatch, handleChange }}
     >
       {children}
     </AppContext.Provider>

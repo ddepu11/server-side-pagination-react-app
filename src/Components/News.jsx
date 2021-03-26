@@ -4,7 +4,13 @@ import { useFetch } from "../useFetch";
 import Loading from "./Loading";
 
 export default function News() {
-  const { news, loading, handleDelete } = useGlobalContext();
+  const {
+    news,
+    loading,
+    handleDelete,
+    currentPage,
+    noOfPages,
+  } = useGlobalContext();
   // console.log(news, loading);
 
   useFetch();

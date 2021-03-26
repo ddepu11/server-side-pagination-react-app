@@ -1,4 +1,10 @@
-import { SET_LOADING, SET_NEWS, SET_TERM, REMOVE_NEWS } from "./actions";
+import {
+  SET_LOADING,
+  SET_NEWS,
+  SET_TERM,
+  REMOVE_NEWS,
+  SET_NO_OF_PAGES,
+} from "./actions";
 
 const reducer = (state, action) => {
   const payload = action.payload;
@@ -9,27 +15,32 @@ const reducer = (state, action) => {
         ...state,
         loading: true,
       };
-      break;
 
     case SET_TERM:
       return {
         ...state,
         term: payload,
       };
-      break;
     case SET_NEWS:
       return {
         ...state,
         news: payload,
         loading: false,
       };
-      break;
     case REMOVE_NEWS:
       return {
         ...state,
         news: state.news.filter((item) => item.objectID !== payload),
       };
-      break;
+    case SET_NO_OF_PAGES:
+      return {
+        ...state,
+        noOfPages: +payload,
+      };
+    default:
+      return {
+        ...state,
+      };
   }
 };
 
