@@ -4,12 +4,12 @@ import { useFetch } from "../useFetch";
 import Loading from "./Loading";
 
 export default function News() {
-  const { news, loading } = useGlobalContext();
+  const { news, loading, handleDelete } = useGlobalContext();
+  // console.log(news, loading);
 
   useFetch();
-  const handleDelete = (e) => {
-    e.preventDefault();
-  };
+
+  
 
   let toShow =
     !loading && news.length !== 0

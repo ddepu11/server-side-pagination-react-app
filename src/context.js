@@ -1,15 +1,33 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useReducer } from "react";
+import { reducer } from "./reducer";
+import { SET_LOADING, SET_NEWS, SET_TERM, REMOVE_NEWS } from "./actions";
 
 const AppContext = createContext();
 
+const initialState = {
+  loading: false,
+  news: [],
+  term: "js",
+};
+
 const AppProvider = ({ children }) => {
-  const [term, setTerm] = useState("js");
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const handleChange = (e) => {
+    dispatch({ type: SET_TERM, payload: e.target.value });
+  };
 
   return (
     <AppContext.Provider
-      value={{ term, setTerm, news, setNews, loading, setLoading }}
+      value={{ ...state, handleDelete, dispatch, handleChange, handleSubmit }}
     >
       {children}
     </AppContext.Provider>

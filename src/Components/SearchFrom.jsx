@@ -2,16 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../context";
 
 export default function SearchFrom() {
-  
-  const { term, setTerm } = useGlobalContext();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const handleChange = (e) => {
-    setTerm(e.target.value);
-  };
+  const { term, handleSubmit, handleChange } = useGlobalContext();
 
   return (
     <form className="form" onSubmit={handleSubmit}>
