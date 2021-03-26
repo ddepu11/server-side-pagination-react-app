@@ -29,8 +29,26 @@
 }
 body {
   min-height: 100vh;
-  background: linear-gradient(to right, #000000, #434343);
+  /* background-image: linear-gradient(
+    to right top,
+    #000000,
+    #030303,
+    #070707,
+    #0a0a0a,
+    #0d0d0d,
+    #0d0d0d,
+    #0d0d0d,
+    #0d0d0d,
+    #0a0a0a,
+    #070707,
+    #030303,
+    #000000
+  ); */
   color: white;
+  background: url("./images/bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .container {
   max-width: 1200px;
@@ -58,4 +76,17 @@ input {
 button:focus,
 input:focus {
   outline: 0;
+}
+.form {
+  padding: 20px 20px;
+}
+.form input,
+button {
+  font-size: 1em;
+  padding: 5px 10px;
+  color: #333;
+}
+.form button {
+  background-color: #ff5c21;
+  color: white;
 }

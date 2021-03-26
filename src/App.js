@@ -1,9 +1,12 @@
 import "./App.css";
+import News from "./Components/News";
+import SearchFrom from "./Components/SearchFrom";
 
 function App() {
   return (
     <div className="container">
-      <h1>App</h1>
+      <SearchFrom />
+      <News />
     </div>
   );
 }
